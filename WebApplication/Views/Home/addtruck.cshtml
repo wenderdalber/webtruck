@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("add", "Home", FormMethod.Post))
+{
+    <div class="form-horizontal">
+
+        <div class="form-group">
+            <label>Year Model</label>
+            <input type="text" class="form-control" id="yearmodel" name="yearmodel" placeholder="Year Model" />
+        </div>
+
+        <div class="form-group">
+            <label>Year Manufacturing</label>
+            <input type="text" class="form-control" id="yearmanufacturing" name="yearmanufacturing" placeholder="Year Manufacturing" />
+        </div>
+
+        <div class="form-group">
+            <label>Model</label>
+            <select class="form-control" id="model">
+                <option value="1">FH</option>
+                <option value="2">FM</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-sm btn-success">Save</button>
+        </div>
+
+    </div>
+}

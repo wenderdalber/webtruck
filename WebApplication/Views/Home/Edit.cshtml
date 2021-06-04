@@ -1,0 +1,47 @@
+﻿@model WebApplication.Models.Entities.Trucks
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("editTruck", "Home", FormMethod.Post))
+{
+
+    <div class="form-horizontal">
+
+        <input type="hidden" id="truck" name="truck" value="@Model.ID" />
+
+        <div class="form-group">
+            <label>Year Model</label>
+            <input type="text" class="form-control" value="@Model.YearModel" id="yearmodel" name="yearmodel" placeholder="Year Model" />
+        </div>
+
+        <div class="form-group">
+            <label>Year Manufacturing</label>
+            <input type="text" class="form-control" value="@Model.YearManufacturing" id="yearmanufacturing" name="yearmanufacturing" placeholder="Year Manufacturing" />
+        </div>
+
+        <div class="form-group">
+            <label>Model</label>
+            <select class="form-control" id="model">
+
+                @if (Model.Model == WebApplication.Models.Entities.ModelEnum.FH)
+                {
+                    <option value="1" selected>FH</option>
+                    <option value="2">FM</option>
+                }
+                else
+                {
+                    <option value="1">FH</option>
+                    <option value="2" selected>FM</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-sm btn-primary">Alterar</button>
+        </div>
+
+    </div>
+}
+
+
